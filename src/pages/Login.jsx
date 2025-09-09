@@ -1,19 +1,19 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import './Login.css'
 
 export const Login = () => {
     const navigate = useNavigate();
 
     const login = e => {
-        e.preveneDefault()
-        console.log('logou')
-        navigate('/home')
-
+        /* evita recarregar a página */
+        e.preventDefault();
+        console.log('logou');
+        navigate('/home');
     }
 
     return (
         <main className="form-signin w-100 m-auto">
-            <img className="mb-4" src="	https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
+            <img className="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
             <form onSubmit={login}>
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                 <div className="form-floating">
@@ -33,5 +33,8 @@ export const Login = () => {
                 <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button>
                 <p className="mt-5 mb-3 text-body-secondary">© 2017–2025</p>
             </form>
-        </main>)
+        </main>
+    )
 }
+
+

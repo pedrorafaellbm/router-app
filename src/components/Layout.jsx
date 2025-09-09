@@ -7,7 +7,7 @@ export const Layout = () => {
     return (
         <>
             <Navbar />
-            <main className="d-flex justify-content-center align-items-center vh-100">
+            <main className='conteiner d-flex justify-content-center align-items-center vh-100'>
                 <Outlet/>
             </main>
             <Footer />
