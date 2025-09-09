@@ -7,29 +7,34 @@ import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } fro
 import { Login } from './pages/Login.jsx';
 import { Cadastro } from './pages/Cadastro.jsx';
 import { NotFound } from './pages/NotFound.jsx';
+import { Home } from './pages/Home.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login/>
+    element: <Login />
   },
   {
     path: '/home',
-    element: <App/>
+    element: <Home />
+  },
+  {
+    path: '/contato',
+    element: <Contato />
   },
   {
     path: '/cadastro',
-    element: <Cadastro/>
+    element: <Cadastro />
   },
   {
     path: '*',
-    element: <NotFound/>
+    element: <NotFound />
   },
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </StrictMode>,
 )
