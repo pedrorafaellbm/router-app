@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export const Login = () => {
     const navigate = useNavigate();
-    const [FormData, setFormData] = useState({
+    const [formData, setFormData] = useState({
         email: '',
         senha: ''
     });
@@ -13,8 +13,7 @@ export const Login = () => {
     const login = e => {
         /* evita recarregar a página */
         e.preventDefault();
-        console.log('logou');
-        navigate('/home');
+        console.log('dados', formData);
     }
 
     // const handEmail = (e) => {
@@ -31,7 +30,10 @@ export const Login = () => {
     const handInput = (e) => {
         console.log(e.target.id, e.target.value)
 
-        setFormData({ [e.target.id]: e.target.value })
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        })
 
     }
 
@@ -77,8 +79,9 @@ export const Login = () => {
                         Remember me
                     </label>
                 </div>
-                <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-                <p className="mt-5 mb-3 text-body-secondary">© 2017–2025</p>
+                <button className="btn btn-success w-100 py-2" type="submit">Entrar</button>
+                <hr />
+                <p className="mt-5 mb-3 text-body-secondary ">© 2017–2025</p>
             </form>
         </main>
     )

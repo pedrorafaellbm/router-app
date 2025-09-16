@@ -5,7 +5,7 @@ export const InputField = (props) => {
         <div className="form-floating">
             <input type={props.type}
                 className="form-control"
-                id="floatingInput"
+                id={props.id}
                 placeholder={props.placeholder} 
                 value={props.value}
                 onChange={props.onChange}
