@@ -17,13 +17,24 @@ export const Login = () => {
         navigate('/home');
     }
 
-const handEmail = (e) => {
-    console.log(e.target.value)
-}
+    // const handEmail = (e) => {
+    //     console.log(e.target.id, e.target.value)
 
-const handSenha = (e) => {
-    console.log(e)
-}
+    //     setFormData({ email: e.target.value })
+    // }
+
+    // const handSenha = (e) => {
+    //     console.log(e.target.id, e.target.value)
+    //     setFormData({ senha: e.target.value })
+
+
+    const handInput = (e) => {
+        console.log(e.target.id, e.target.value)
+
+        setFormData({ [e.target.id]: e.target.value })
+
+    }
+
 
     return (
         <main className="form-signin w-100 m-auto">
@@ -37,7 +48,9 @@ const handSenha = (e) => {
                     type='email'
                     placeholder="name@exemple.com"
                     value={FormData.email}
-                    onChange={handEmail}
+                    // onChange={handEmail}
+                    onChange={handInput}
+
 
                 />
                 <InputField
@@ -46,7 +59,8 @@ const handSenha = (e) => {
                     type='password'
                     placeholder="name@exemple.com"
                     value={FormData.senha}
-                    onChange={handSenha}
+                    // onChange={handSenha}
+                    onChange={handInput}
 
                 />
                 {/* <div className="form-floating">
