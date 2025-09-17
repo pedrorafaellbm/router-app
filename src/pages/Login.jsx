@@ -10,19 +10,19 @@ export const Login = () => {
         senha: ''
     });
 
-    
+
     const login = e => {
-    e.preventDefault();
-    if (
-        formData.email === 'adm@ctech.com' &&
-        formData.senha === 'adm123'
-    ) {
-        alert('Login efetuado com sucesso!');
-        navigate('/home');
-    } else {
-        alert('Credenciais inválidas! Tente novamente.');
+        e.preventDefault();
+        console.log('dados', formData);
+        if (formData.email !== 'adm@ctech.com') {
+            alert('Email inválido!');
+        } else if (formData.senha !== 'adm123') {
+            alert('Senha inválida!');
+        } else {
+            alert('Login efetuado com sucesso!');
+            navigate('/home');
+        }
     }
-}
 
     // const handEmail = (e) => {
     //     console.log(e.target.id, e.target.value)
